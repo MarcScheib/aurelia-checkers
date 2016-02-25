@@ -1,3 +1,7 @@
+body {
+  background-color: #3c8a52;
+}
+
 /** Loading Screen **/
 .splash {
   text-align: center;
@@ -18,4 +22,63 @@
   display: inline-block;
   font-size: 72px;
   margin-top: 50px;
+}
+
+/** board **/
+#board {
+  border: 9px solid #DEB887;
+  margin: 60px auto 0 auto;
+
+  height: 382px;
+  width: 382px;
+}
+
+/** squares **/
+.square {
+  border: 2px #444;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  float: left;
+  height: 46px;
+  width: 46px;
+}
+
+.square.movable:hover {
+  box-shadow: inset 0 0 8px #FFD700;
+  cursor: pointer;
+}
+
+.square:nth-last-child(-n + 8) {
+  border-bottom-style: none;
+}
+
+.square:nth-child(8n) {
+  border-right-style: none;
+}
+
+.square.light {
+  background-color: #ccc;
+}
+
+.square.dark {
+  background-color: #333;
+}
+
+/** pieces **/
+.piece {
+  background-color: blue;
+  border-radius: 16px;
+  box-shadow: 0 0 3px #666;
+  margin: 7px;
+  position: absolute;
+  height: 32px;
+  width: 32px;
+}
+
+.piece.light {
+  background-color: red;
+}
+
+.piece.dark {
+  background-color: black;
 }
