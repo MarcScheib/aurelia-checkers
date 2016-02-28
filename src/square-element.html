@@ -1,5 +1,9 @@
-<template class="square ${square.type}">
+<template>
   <require from='./piece-element'></require>
 
-  <piece if.bind="square.piece" piece.bind="square.piece"></piece>
+  <div class="square ${square.type}">
+    <div class="placeholder"></div>
+    <piece if.bind="square.piece" piece.bind="square.piece" class.bind="(square.piece ? 'placed' : '')"></piece>
+    <div class="drop-target" if.bind="square.canDrop && !square.piece"></div>
+  </div>
 </template>

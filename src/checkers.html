@@ -2,6 +2,6 @@
   <require from='./square-element'></require>
 
   <div id="board">
-    <square square.bind="item" repeat.for="item of board.squares"></square>
+    <square square.bind="square" repeat.for="square of squares"></square>
   </div>
 </template>

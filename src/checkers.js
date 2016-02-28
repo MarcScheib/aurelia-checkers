@@ -4,6 +4,7 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 import {Board} from './board';
 import {Square} from './square';
 import {Piece} from './piece';
+import {PieceDroppedEvent} from './events';
 
 var squareType = {
   light: 'light',
@@ -18,6 +19,7 @@ var pieceType = {
 @inject(EventAggregator, Board)
 export class Checkers {
   board;
+  squares = [];
 
   constructor(eventAggregator, board) {
     this.eventAggregator = eventAggregator;
@@ -28,6 +30,7 @@ export class Checkers {
     for (let i = 0; i < squareCount; i++) {
       let type = this.lightOrDark(i);
       let square = new Square(type, false, type === 'dark');
+      this.squares.push(square);
       this.board.addSquare(square);
     }
 
@@ -43,6 +46,8 @@ export class Checkers {
       let squareIndex = this.getSquareIndex(i, piece);
       this.board.squares[squareIndex].setPiece(piece);
     }
+
+    this.eventAggregator.subscribe(PieceDroppedEvent, ::this.pieceDropped);
   }
 
   /**
@@ -65,5 +70,14 @@ export class Checkers {
     }
 
     return index;
+  }
+
+  pieceDropped(e) {
+    let piece = e.piece;
+    let square = e.square;
+
+    // check for validity
+    this.board.movePiece(piece, square);
+    console.log("dropped");
   }
 }
