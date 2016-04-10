@@ -6,10 +6,11 @@ export class Board {
   }
 
   movePiece(piece, toSquare) {
-    console.log(toSquare);
-    toSquare.setPiece(piece);
-    for (square in this.squares) {
-      console.log(square);
+    for (let square of this.squares) {
+      if (square.piece === piece) {
+        square.piece = undefined;
+      }
     }
+    toSquare.setPiece(piece);
   }
 }

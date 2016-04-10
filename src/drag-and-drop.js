@@ -31,8 +31,8 @@ export class DragAndDrop {
 
   trackDrop(dragApi) {
     dragApi.on('drop', (el, container, source) => {
-      let piece = source.parentElement.piece;
-      let square = container.parentElement.parentElement.square;
+      let piece = source.parentElement.au.piece.viewModel.piece;
+      let square = container.parentElement.parentElement.au.square.viewModel.square;
       dragApi.cancel();
       this.eventAggregator.publish(new PieceDroppedEvent(piece, square));
     });
