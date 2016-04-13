@@ -6,12 +6,12 @@ import {Square} from './square';
 import {Piece} from './piece';
 import {PieceDroppedEvent} from './events';
 
-var squareType = {
+let squareType = {
   light: 'light',
   dark: 'dark'
 };
 
-var pieceType = {
+let pieceType = {
   light: 'light',
   dark: 'dark'
 };
@@ -56,10 +56,10 @@ export class Checkers {
    * square should be dark or light.
    */
   lightOrDark(index) {
-    var x = index % 8;
-    var y = Math.floor(index / 8);
-    var oddX = x % 2;
-    var oddY = y % 2;
+    let x = index % 8;
+    let y = Math.floor(index / 8);
+    let oddX = x % 2;
+    let oddY = y % 2;
     return (oddX ^ oddY) ? squareType.dark : squareType.light;
   }
 
@@ -78,6 +78,5 @@ export class Checkers {
 
     // check for validity
     this.board.movePiece(piece, square);
-    console.log("dropped");
   }
 }
