@@ -18,18 +18,19 @@
   },
   "devDependencies": {
     "aurelia-bundler": "^0.3.2",
-    "aurelia-tools": "^0.1.20",
-    "babel-eslint": "^4.1.8",
+    "aurelia-tools": "^0.1.22",
+    "babel-eslint": "^6.0.4",
     "babel-plugin-syntax-flow": "^6.5.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-es2015-modules-amd": "^6.6.5",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.7.7",
     "babel-plugin-transform-es2015-modules-systemjs": "^6.6.5",
     "babel-plugin-transform-flow-strip-types": "^6.7.0",
+    "babel-plugin-transform-function-bind": "^6.5.2",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-es2015-loose": "^7.0.0",
     "babel-preset-stage-1": "^6.5.0",
-    "browser-sync": "^2.12.3",
+    "browser-sync": "^2.12.5",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -37,38 +38,33 @@
     "gulp-bump": "^2.1.0",
     "gulp-changed": "^1.3.0",
     "gulp-conventional-changelog": "^1.1.0",
-    "gulp-cssnano": "^2.1.1",
+    "gulp-cssnano": "^2.1.2",
     "gulp-eslint": "^1.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^1.3.0",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-yuidoc": "^0.1.2",
-    "jspm": "0.16.15",
+    "jspm": "^0.16.34",
     "object.assign": "^4.0.3",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5",
     "vinyl-paths": "^2.1.0",
-    "yargs": "^4.5.0"
+    "yargs": "^4.6.0"
   },
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.1.4",
-      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@^1.0.0-beta.1.1.5",
-      "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.0-beta.1.1.1",
-      "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.1.4",
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.2.0",
+      "aurelia-dependency-injection": "npm:aurelia-dependency-injection@^1.0.0-beta.1.2.2",
+      "aurelia-event-aggregator": "npm:aurelia-event-aggregator@^1.0.0-beta.1.2.0",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.2.2",
       "bootstrap": "github:twbs/bootstrap@3.3.6",
       "dragula": "npm:dragula@^2.1.2"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^2.0.3"
-    },
-    "overrides": {
-      "npm:core-js@2.0.3": {
-        "main": "client/shim.min"
-      }
+      "babel": "npm:babel-core@^5.8.38",
+      "babel-runtime": "npm:babel-runtime@^5.8.38",
+      "core-js": "^1.2.6"
     }
   }
 }

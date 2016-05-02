@@ -47,7 +47,7 @@ export class Checkers {
       this.board.squares[squareIndex].setPiece(piece);
     }
 
-    this.eventAggregator.subscribe(PieceDroppedEvent, this.pieceDropped.bind(this));
+    this.eventAggregator.subscribe(PieceDroppedEvent, ::this.pieceDropped);
   }
 
   /**
